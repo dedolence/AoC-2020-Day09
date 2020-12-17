@@ -14,10 +14,10 @@ def check(i, set):
 
                 # test 
                 if (num1 + num2) == i:
-                    return False
+                    return True
     
     # didn't pass test
-    return True
+    return False
 
 def findOddOne(input):
 
@@ -27,8 +27,8 @@ def findOddOne(input):
     # first digit after preamble
     i = input[len(preamble)]
 
-    # check this number
-    if not check(i, preamble):
+    # find the one that fails the test
+    if check(i, preamble):
         # move everything forward one digit by removing the 1st number
         input.pop(0)
         # try again
